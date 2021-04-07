@@ -42,7 +42,7 @@ Detailed metadata needs to be captured on a number of aspects. One of the most c
   * [COPO](https://copo-project.org/) is a data management platform specific for the plant sciences.
   * [FAIRsharing](https://fairsharing.org) is a manually curated registry of reporting guidelines, vocabularies, identifier scheme, models, formats, repositories, knowledgebases, and data policies that includes many resources relevant for managing plant phenotyping data.
   
-* Validation of MIAPPE compliance can be done via [ISA-Tools](https://isa-tools.org/) or upon data deposition in a BrAPI-compliant repository ([Breeding API, BrAPI](https://brapi.org/).
+* Validation of MIAPPE compliance can be done via [ISA-Tools](https://isa-tools.org/) or upon data deposition in a BrAPI-compliant repository ([Breeding API, BrAPI](https://brapi.org/)).
 
 
 ## Plant phenotyoping data sharing and deposition
@@ -66,30 +66,31 @@ For managers of plant phenotyping data repositories that support a project or in
   * If the database is MIAPPE compliant, you can use the [MIAPPE-compliant spreadsheet template](https://github.com/MIAPPE/MIAPPE/raw/master/MIAPPE_Checklist-Data-Model-v1.1/MIAPPE_templates/MIAPPEv1.1_training_spreadsheet.xlsx)
 * If you or your partners collect data into data management platforms:
   * If it implements BrAPI, you can exchange data using BrAPI calls.
-  * If it doesn’t implement BrAPI, the simplest solution would be to export data into the MIAPPE spreadsheet template, or whichever other template you defined for manual collection.
+  * If it doesn’t implement BrAPI, the simplest solution would be to export data into the MIAPPE spreadsheet template, or whichever other MIAPPE compliant template you defined for manual collection.
 * For data deposition, it is highly recommended that you opt for one of the many [repositories that implement BrAPI](https://www.brapi.org/servers), as this enables both validation and findability, through the ELIXIR plant data discovery service, [FAIDARE](https://urgi.versailles.inrae.fr/faidare/).
  
 ## Integrating plant phenotypic and molecular data
  
 ### Description 
-Plant phenoptying experiments require integrating genomic and phenotypic data of the plants with data about their environment. While phenotypic and environmental data are typically stored together in phenotyping databases, genomic and other types of molecular data are deposited in international deposition databases for that type of data, typically within the [INSDC global consortium](http://www.insdc.org/). It can be challenging to integrate phenotypic and molecular data even within a single project, particularly if the project involves studying a panel of genetic resources in different conditions. To do so, it is paramount to keep the link between the plant material in the field, the samples extracted from them (e.g. at different development stages), and the results of omics experiments (e.g. transcriptomics, metabolomics) performed on those samples, across all datasets that will be generated and published. Even more challenging is integrating phenoptypic and molecular data about the same plants across different experiments.
+Genomic and other types of molecular data are deposited in international deposition databases for that type of data, typically within the [INSDC global consortium](http://www.insdc.org/) while phenotyping data have no central archive and are stored in various organization's databases. It can be challenging to integrate phenotypic and molecular data even within a single project. To do so, it is paramount to keep the link between the plant material in the field/greenhouse experimented wether they are in one or several environments, the samples extracted from them (e.g. at different development stages), and the results of phenotyping and omics experiments (e.g. transcriptomics, metabolomics) performed on those samples, across all datasets that will be generated and published. It can require coordination when different laboratories are involved.
 
-Integrating phenotyping and molecular data, both within and between studies, hinges entirely on precise identification of the plant material under study (down to the variety, or even the seed lot), as well as of the samples that are collected from these plants.
+In summary: integrating phenotyping and molecular data, both within and between studies, hinges entirely on precise identification of the plant material under study (down to the variety, or even the seed lot), as well as of the samples that are collected from these plants.
 
 ### Considerations
 * Are you working with established plant varieties, namely of crop plants?
-  * Can you trace their provenance to a genebank and/or are they identified in a germplasm database? 
-* Are working with crosses of established plant varieties?
-  * Can you trace the geneology of the crosses to plant varieties from a genebank or identified in a germplasm database?
+  * Can you trace their provenance to a genebank and/or are they uniquely identified in a germplasm database?
+* Do you have additional identifiers associated: seed lots id, samples id?
+* Are you working with crosses of established plant varieties?
+  * Can you trace the genealogy of the crosses to plant varieties from a genebank or identified in a germplasm database?
   
 ### Solutions
+* The minimal information necessary for identifying plant material and derived samples is explained in the [MIAPPE training material](https://tess.elixir-europe.org/search?q=MIAPPE). It is recommended also for the description of the plant material involved in omics experiments by the ELIXIR Plant community.
 * The identification and description of plant materials should comply with the standard for the identification of plant genetic resources, [The Multi-Crop Passport Descriptors](https://www.bioversityinternational.org/e-library/publications/detail/faobioversity-multi-crop-passport-descriptors-v21-mcpd-v21/) (MCPD).
   * If your plant materials that cannot be traced to an existing genebank or germplasm database, you should be describe them in accordance with the MCPD in as much detail as possible.
-  * If your plant materials can be traced to an existing genebank or germplasm database, you need only complement the MCPD information already published in the genebank or germplasm database.
+  * If your plant materials can be traced to an existing genebank or germplasm database, you need only to capture the main identifiers provided by the genbank listed in the MIAPPE check list section "plant material" (the rest of the MCPD information is already published in the genebank database).
   * For wild trees, or plant materials derived from them, precise identification often requires the GPS coordinates of the tree.
-* For identifying your plant material in a genebank or germplasm database, you can consult the [European Cooperative Programme for Plant Genetic Resources](https://www.ecpgr.cgiar.org/) (ECPGR), which includes a [central germplasm database](https://www.ecpgr.cgiar.org/resources/germplasm-databases/ecpgr-central-crop-databases) and a catalogue of relevant [external databases](https://www.ecpgr.cgiar.org/resources/germplasm-databases/international-multicrop-databases).
-* Another key database for identifying plant material is the [European Search Catalogue for Plant Genetic Resources](https://eurisco.ipk-gatersleben.de/) (EURISCO), which provides information about more than 2 million accessions of crop plants and their wild relatives, from hundreds of institutes in 43 member countries.
-* For identifying samples from which molecular data was produced, you should use the [Biosamples](https://www.ebi.ac.uk/biosamples/) database, even when it is not required by the database in which you will deposit the molecular data.
+* For identifying your plant material from a European genebank you can consult the [European Search Catalogue for Plant Genetic Resources](https://eurisco.ipk-gatersleben.de/) (EURISCO), which provides information about more than 2 million accessions of crop plants and their wild relatives, from hundreds of institutes in 43 member countries. We advise however that you check with the genbank that gave you the original material as a same variety can be held under several accessions.
+* For identifying samples from which molecular data was produced, you should use the [Biosamples](https://www.ebi.ac.uk/biosamples/) database to get permanent identifiers in advance, even when it is not required by the database in which you will deposit the molecular data.
   * When detailing your sample in Biosamples, it is critical that you provide either a global identifier to your plant materials in a genebank or germplasm database, or a precise description of the plant materials in accordance with the MCPD. 
 * It is also recommended that you provide permanent access to a description of the project or study, that contains links to all the data, molecular or phenotypic. The [Biostudies](https://www.ebi.ac.uk/biostudies/) database is recommended for this purpose.
 
